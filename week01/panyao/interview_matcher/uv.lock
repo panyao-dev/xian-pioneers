@@ -87,10 +87,14 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "openai" },
+    { name = "pypdf" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "openai", specifier = ">=3.46.0" }]
+requires-dist = [
+    { name = "openai", specifier = ">=3.46.0" },
+    { name = "pypdf", specifier = ">=7.0.1" },
+]
 
 [[package]]
 name = "jiter"
@@ -326,6 +330,15 @@ wheels = [
     { url = "https://mirrors.aliyun.com/pypi/packages/9e/3a/d405a50e02ea81cd95e93fc97f43d351eeaa1707c28aa6fb58a9f1c1efa9/pydantic_core-2.50.4-graalpy313-graalpy253_313_native-macosx_11_0_arm64.whl", hash = "sha256:71e03d2ea1a221d020cfc5b6cc8bbbedef23a06704c70fcf4d0afb42965b22d1" },
     { url = "https://mirrors.aliyun.com/pypi/packages/8f/3b/03e7992115e17cae4131ecd71aadb8fd5e4a04cc2aead72c3c27e9b453d1/pydantic_core-2.50.4-graalpy313-graalpy253_313_native-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:09450778e3ab58d3f565899fcfbf6c82926e31af29e28e799d1d50941316e0cb" },
     { url = "https://mirrors.aliyun.com/pypi/packages/e3/d5/b76fc647e473377ca6e693c21549ee3a4a7677e4962c28ae4659337c5114/pydantic_core-2.50.4-graalpy313-graalpy253_313_native-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:4eb15be588407148ef5937dc8d9256a71f6b115e6cddadb7aa20b6ee384680dc" },
+]
+
+[[package]]
+name = "pypdf"
+version = "7.0.1"
+source = { registry = "https://mirrors.aliyun.com/pypi/simple/" }
+sdist = { url = "https://mirrors.aliyun.com/pypi/packages/00/c2/4c34b3229abae3e2fcc7809e6cf80fdea159771a37142f475fbf1009c809/pypdf-7.0.1.tar.gz", hash = "sha256:0a78bb99efb41e9088260e9a8e5da134a5cbb9a322014744177bf29b5267ea6d" }
+wheels = [
+    { url = "https://mirrors.aliyun.com/pypi/packages/d5/a9/ae11deef21eaac5113f8c3848da1c42423b7abeca0abc349bfec7abf4c4e/pypdf-7.0.1-py3-none-any.whl", hash = "sha256:6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b" },
 ]
 
 [[package]]
