@@ -7,6 +7,7 @@
 |---|---|---|
 | `uv run w1-hello` | `interview_matcher.week1.hello` | 单轮调通，输出 token 用量 |
 | `uv run w1-tool-call` | `interview_matcher.week1.tool_call` | 工具调用闭环，可带自定义问题 |
+| `uv run w2-real <pdf...>` | `interview_matcher.week2.real_resume_demo` | 真实简历 PDF 脱敏后，按 zero/few-shot/CoT 三策略抽取标签 |
 
 带参数示例：`uv run w1-tool-call "社招一般安排几轮面试？"`
 

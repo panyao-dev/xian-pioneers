@@ -1,6 +1,6 @@
 # 统一入口：走 uv 生成的控制台脚本（依赖由 pyproject.toml / uv.lock 管理）
 # 用法： .\run.ps1 01      /  .\run.ps1 02
-param([Parameter(Mandatory = $true)][ValidateSet("01", "02")][string]$Task)
+param([Parameter(Mandatory = $true)][ValidateSet("01", "02", "03")][string]$Task)
 
 $ErrorActionPreference = "Stop"
 Set-Location -LiteralPath $PSScriptRoot
@@ -8,6 +8,7 @@ Set-Location -LiteralPath $PSScriptRoot
 $entry = @{
     "01" = "w1-hello"
     "02" = "w1-tool-call"
+    "03" = "w2-real"
 }[$Task]
 
 $env:PYTHONIOENCODING = "utf-8"
@@ -20,6 +21,7 @@ if (Get-Command uv -ErrorAction SilentlyContinue) {
     $module = @{
         "01" = "interview_matcher.week1.hello"
         "02" = "interview_matcher.week1.tool_call"
+        "03" = "interview_matcher.week2.real_resume_demo"
     }[$Task]
     $py = Join-Path $PSScriptRoot ".venv\Scripts\python.exe"
     if (-not (Test-Path -LiteralPath $py)) {

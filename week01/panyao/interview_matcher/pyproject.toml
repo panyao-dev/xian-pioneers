@@ -6,11 +6,13 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "openai>=3.46.0",
+    "pypdf>=7.0.1",
 ]
 
 [project.scripts]
 w1-hello = "interview_matcher.week1.hello:main"
 w1-tool-call = "interview_matcher.week1.tool_call:main"
+w2-real = "interview_matcher.week2.real_resume_demo:main"
 
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple/"

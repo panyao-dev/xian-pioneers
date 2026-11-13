@@ -1,0 +1,546 @@
+{
+  "strategies": [
+    "zero_shot",
+    "few_shot",
+    "cot"
+  ],
+  "records": [
+    {
+      "resume_id": "安卓系统应用工程师西安王嘉",
+      "name": "安卓系统应用工程师西安王嘉",
+      "strategy": "zero_shot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "App & 应用层"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "Settings系统应用定制",
+          "系统相机应用",
+          "系统联系人/拨号应用",
+          "行业终端定制(记录仪/车台)",
+          "分屏/悬浮窗/折叠屏适配"
+        ],
+        "secondary_skill": [
+          "四大组件框架",
+          "Handler/消息机制",
+          "事件分发机制",
+          "网络框架",
+          "普通业务App开发"
+        ],
+        "not_suitable_interview": [
+          "Binder底层原理",
+          "AMS/WMS/PMS框架开发",
+          "HIDL/AIDL底层设计",
+          "HAL硬件抽象层开发",
+          "SELinux底层安全策略",
+          "Linux内核",
+          "电源管理"
+        ]
+      },
+      "raw": "{\"primary_level\": [\"系统应用\", \"App & 应用层\"], \"core_focus\": [\"SystemUI定制\", \"Settings系统应用定制\", \"系统相机应用\", \"系统联系人/拨号应用\", \"行业终端定制(记录仪/车台)\", \"分屏/悬浮窗/折叠屏适配\"], \"secondary_skill\": [\"四大组件框架\", \"Handler/消息机制\", \"事件分发机制\", \"网络框架\", \"普通业务App开发\"], \"not_suitable_interview\": [\"Binder底层原理\", \"AMS/WMS/PMS框架开发\", \"HIDL/AIDL底层设计\", \"HAL硬件抽象层开发\", \"SELinux底层安全策略\", \"Linux内核\", \"电源管理\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 2425,
+        "completion_tokens": 1828,
+        "total_tokens": 4253
+      },
+      "oov_tags": [
+        "网络框架"
+      ]
+    },
+    {
+      "resume_id": "安卓系统应用工程师西安王嘉",
+      "name": "安卓系统应用工程师西安王嘉",
+      "strategy": "few_shot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "车机专项"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "Settings系统应用定制",
+          "系统相机应用",
+          "系统联系人/拨号应用",
+          "锁屏/Keyguard定制",
+          "行业终端定制(记录仪/车台)"
+        ],
+        "secondary_skill": [
+          "分屏/悬浮窗/折叠屏适配",
+          "网络框架(OkHttp/Retrofit)",
+          "普通业务App开发",
+          "Handler/消息机制",
+          "事件分发机制"
+        ],
+        "not_suitable_interview": [
+          "Binder底层原理",
+          "AMS/WMS/PMS框架开发",
+          "HAL硬件抽象层开发",
+          "Linux内核",
+          "HIDL/AIDL底层设计",
+          "设备驱动",
+          "电源管理"
+        ]
+      },
+      "raw": "{\"primary_level\": [\"系统应用\", \"车机专项\"], \"core_focus\": [\"SystemUI定制\", \"Settings系统应用定制\", \"系统相机应用\", \"系统联系人/拨号应用\", \"锁屏/Keyguard定制\", \"行业终端定制(记录仪/车台)\"], \"secondary_skill\": [\"分屏/悬浮窗/折叠屏适配\", \"网络框架(OkHttp/Retrofit)\", \"普通业务App开发\", \"Handler/消息机制\", \"事件分发机制\"], \"not_suitable_interview\": [\"Binder底层原理\", \"AMS/WMS/PMS框架开发\", \"HAL硬件抽象层开发\", \"Linux内核\", \"HIDL/AIDL底层设计\", \"设备驱动\", \"电源管理\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 2525,
+        "completion_tokens": 2475,
+        "total_tokens": 5000
+      },
+      "oov_tags": []
+    },
+    {
+      "resume_id": "安卓系统应用工程师西安王嘉",
+      "name": "安卓系统应用工程师西安王嘉",
+      "strategy": "cot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "App & 应用层"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "Settings系统应用定制",
+          "行业终端定制(记录仪/车台)",
+          "系统相机应用",
+          "系统联系人/拨号应用",
+          "分屏/悬浮窗/折叠屏适配"
+        ],
+        "secondary_skill": [
+          "四大组件框架",
+          "Handler/消息机制",
+          "事件分发机制",
+          "自定义View/UI",
+          "网络框架"
+        ],
+        "not_suitable_interview": [
+          "Binder底层原理",
+          "AMS/WMS/PMS框架开发",
+          "HAL硬件抽象层开发",
+          "HIDL/AIDL底层设计",
+          "Linux内核",
+          "设备驱动",
+          "SELinux底层安全策略"
+        ]
+      },
+      "raw": "{\"reasoning\": \"1. 简历明确写到的项目事实：\\n- 技能：四大组件、Handler消息机制、AIDL进程间通信、事件分发机制、Binder机制(有一定了解)、自定义控件/UI绘制/屏幕适配、多线程线程池、Linux/adb命令\\n- 项目一(鼎桥记录仪/车台)：行业Android终端，5G执法记录仪+车载车台，负责系统层业务开发，SystemUI、Settings、MMI测试应用适配\\n- 项目二(AOSP SystemUI/锁卡助手)：展锐原生系统定制化，状态栏/导航栏/锁屏界面/系统交互动画，稳定性问题分析\\n- 项目三(realme系统相机应用)：应用层+驱动层拍照录像，美颜/滤镜/自拍/夜景，新功能开发与维护\\n- 项目四(华为系统联系人)：联系人管理/通话记录/系统设置模块，无障碍/适老化/屏幕朗读，分屏/悬浮窗适配\\n- 项目五(扫名片)：依赖系统Camera模块+三方名片识别SDK\\n- 项目六(点菜通)：UI布局+业务处理，OKHttp网络框架\\n\\n2. 深度主导 vs 仅用过：\\n- 深度主导：SystemUI定制(项目一二均深度参与)、Settings系统应用定制(项目一)、行业终端定制记录仪/车台(项目一)、系统相机应用(项目三)、系统联系人/拨号应用(项目四)、分屏/悬浮窗适配(项目四)\\n- 会用过非主攻：四大组件框架、Handler/消息机制、事件分发机制、自定义View/UI、网络框架OkHttp\\n- 相邻但无深度实践：Binder底层原理(仅'有一定了解')、AMS/WMS/PMS框架开发(app启动流程'有一定了解')、HAL硬件抽象层开发(项目三提到驱动层但职责在应用层)、HIDL/AIDL底层设计(仅提到AIDL技术做IPC)、Linux内核(仅熟悉命令)、设备驱动(项目三提到但非主导)、SELinux底层安全策略(未提及)\\n\\n3. 映射到词表标签：primary_level选系统应用+App&应用层；core_focus放6个深度方向；secondary_skill放5个会用方向；not_suitable_interview放7个相邻无深度方向。\", \"primary_level\": [\"系统应用\", \"App & 应用层\"], \"core_focus\": [\"SystemUI定制\", \"Settings系统应用定制\", \"行业终端定制(记录仪/车台)\", \"系统相机应用\", \"系统联系人/拨号应用\", \"分屏/悬浮窗/折叠屏适配\"], \"secondary_skill\": [\"四大组件框架\", \"Handler/消息机制\", \"事件分发机制\", \"自定义View/UI\", \"网络框架\"], \"not_suitable_interview\": [\"Binder底层原理\", \"AMS/WMS/PMS框架开发\", \"HAL硬件抽象层开发\", \"HIDL/AIDL底层设计\", \"Linux内核\", \"设备驱动\", \"SELinux底层安全策略\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 2502,
+        "completion_tokens": 2102,
+        "total_tokens": 4604
+      },
+      "oov_tags": [
+        "网络框架"
+      ]
+    },
+    {
+      "resume_id": "Android系统开发深圳陈明英",
+      "name": "Android系统开发深圳陈明英",
+      "strategy": "zero_shot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "Framework框架层"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "锁屏/Keyguard定制",
+          "AOD灭屏显示",
+          "插件化/动态加载",
+          "Jetpack Compose",
+          "ANR/卡顿问题定位"
+        ],
+        "secondary_skill": [
+          "系统时钟/日历应用",
+          "MVVM/MVI架构",
+          "Dagger/Hilt依赖注入",
+          "串口/外设通信",
+          "事件分发机制"
+        ],
+        "not_suitable_interview": [
+          "蓝牙协议栈",
+          "HAL硬件抽象层开发",
+          "SELinux底层安全策略",
+          "Linux内核",
+          "设备驱动",
+          "车机HMI",
+          "XTS/GTS/CTS兼容性测试",
+          "高通QCM平台定制"
+        ]
+      },
+      "raw": "{\"primary_level\": [\"系统应用\", \"Framework框架层\"], \"core_focus\": [\"SystemUI定制\", \"锁屏/Keyguard定制\", \"AOD灭屏显示\", \"插件化/动态加载\", \"Jetpack Compose\", \"ANR/卡顿问题定位\"], \"secondary_skill\": [\"系统时钟/日历应用\", \"MVVM/MVI架构\", \"Dagger/Hilt依赖注入\", \"串口/外设通信\", \"事件分发机制\"], \"not_suitable_interview\": [\"蓝牙协议栈\", \"HAL硬件抽象层开发\", \"SELinux底层安全策略\", \"Linux内核\", \"设备驱动\", \"车机HMI\", \"XTS/GTS/CTS兼容性测试\", \"高通QCM平台定制\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 3276,
+        "completion_tokens": 1560,
+        "total_tokens": 4836
+      },
+      "oov_tags": []
+    },
+    {
+      "resume_id": "Android系统开发深圳陈明英",
+      "name": "Android系统开发深圳陈明英",
+      "strategy": "few_shot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "Framework框架层"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "锁屏/Keyguard定制",
+          "AOD灭屏显示",
+          "冷启动优化",
+          "插件化/动态加载",
+          "Jetpack Compose"
+        ],
+        "secondary_skill": [
+          "串口/外设通信",
+          "系统时钟/日历应用",
+          "事件分发机制",
+          "MVVM/MVI架构",
+          "自定义View/UI"
+        ],
+        "not_suitable_interview": [
+          "Linux内核",
+          "HAL硬件抽象层开发",
+          "蓝牙协议栈",
+          "RIL通信",
+          "SELinux底层安全策略",
+          "设备驱动",
+          "电源管理"
+        ]
+      },
+      "raw": "{\"primary_level\": [\"系统应用\", \"Framework框架层\"], \"core_focus\": [\"SystemUI定制\", \"锁屏/Keyguard定制\", \"AOD灭屏显示\", \"冷启动优化\", \"插件化/动态加载\", \"Jetpack Compose\"], \"secondary_skill\": [\"串口/外设通信\", \"系统时钟/日历应用\", \"事件分发机制\", \"MVVM/MVI架构\", \"自定义View/UI\"], \"not_suitable_interview\": [\"Linux内核\", \"HAL硬件抽象层开发\", \"蓝牙协议栈\", \"RIL通信\", \"SELinux底层安全策略\", \"设备驱动\", \"电源管理\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 3376,
+        "completion_tokens": 3379,
+        "total_tokens": 6755
+      },
+      "oov_tags": []
+    },
+    {
+      "resume_id": "Android系统开发深圳陈明英",
+      "name": "Android系统开发深圳陈明英",
+      "strategy": "cot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "Framework框架层"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "锁屏/Keyguard定制",
+          "AOD灭屏显示",
+          "插件化/动态加载",
+          "冷启动优化",
+          "ANR/卡顿问题定位"
+        ],
+        "secondary_skill": [
+          "Jetpack Compose",
+          "事件分发机制",
+          "系统时钟/日历应用",
+          "JNI/NDK开发",
+          "串口/外设通信"
+        ],
+        "not_suitable_interview": [
+          "HAL硬件抽象层开发",
+          "Binder底层原理",
+          "电源管理",
+          "蓝牙协议栈",
+          "AMS/WMS/PMS框架开发",
+          "功耗优化",
+          "内存泄漏治理",
+          "包体积瘦身"
+        ]
+      },
+      "raw": "```json\n{\n  \"reasoning\": \"1. 简历明确写到的项目事实：①6年传音OS SystemUI核心开发，覆盖Keyguard/AOD/StatusBar/Notification Shade/Control Center；②锁屏模块Owner（2023-2026），涵盖充电动画、锁屏时钟、锁屏快捷入口、杂志飘带、锁屏动画五大方向；③充电动画插件化架构演进（独立APK→同进程插件化→灵动岛原子化），PathClassLoader同进程加载，冷启动首帧1.5s→200ms；④VAP播放引擎：MediaCodec硬解+OpenGL ES/GLSL着色器分离Alpha与RGB通道；⑤冷启动首帧1.5s性能专项，基于45MB+系统日志时间线切片，定位MediaCodec HAL冷唤醒524ms空洞；⑥Scene场景框架治理，修复10+时序竞态问题（AOD解锁远程动画14ms被误杀、Lockscreen→Occluded直跳闪烁、灭屏/亮屏竞态等）；⑦锁屏快捷入口与手势触摸治理，梳理InputDispatcher→Compose pointerInput分发链路；⑧系统时钟与日历应用开发迭代（2020-2023）；⑨格兰仕智能烤箱Android系统开发，自研串口JNI通信层，基于AIDL向上提供电控通讯接口；⑩康佳终端人脸解锁、Settings/SystemUI/Dialer/Contacts开发及Framework修改；⑪熟练Kotlin协程/StateFlow、Jetpack Compose、Dagger/Hilt、MVVM/MVI架构；⑫熟练Perfetto/Systrace进行卡顿丢帧首帧延迟分析。\\n2. 深度主导/完整落地：SystemUI定制（6年核心开发）、锁屏/Keyguard定制（模块Owner）、AOD灭屏显示（AOD时钟迭代+解锁动画治理）、插件化/动态加载（充电动画插件化架构演进）、冷启动优化（首帧1.5s→200ms完整专项）、ANR/卡顿问题定位（10+时序竞态修复）。会用过但非主攻：Jetpack Compose（熟练使用但非主攻深度）、事件分发机制（触摸冲突处理）、系统时钟/日历应用（3年开发但已转向锁屏）、JNI/NDK开发（格兰仕串口通信层）、串口/外设通信（格兰仕串口数据读取）。相邻但无深度实践：HAL硬件抽象层开发（仅定位MediaCodec HAL冷唤醒空洞未做HAL开发）、Binder底层原理（熟练AIDL/Binder使用但无底层原理深度实践）、电源管理（熟悉Doze/AOD电源模式但无电源管理项目）、蓝牙协议栈（格兰仕蓝牙自动连接与通话但无协议栈深度）、AMS/WMS/PMS框架开发（Framework定制但无AMS/WMS/PMS框架开发深度）、功耗优化（Doze/AOD熟悉但无功耗优化项目）、内存泄漏治理（掌握排查但无治理项目落地）、包体积瘦身（素材体积下降84%但属素材优化非APK瘦身）。\",\n  \"primary_level\": [\"系统应用\", \"Framework框架层\"],\n  \"core_focus\": [\"SystemUI定制\", \"锁屏/Keyguard定制\", \"AOD灭屏显示\", \"插件化/动态加载\", \"冷启动优化\", \"ANR/卡顿问题定位\"],\n  \"secondary_skill\": [\"Jetpack Compose\", \"事件分发机制\", \"系统时钟/日历应用\", \"JNI/NDK开发\", \"串口/外设通信\"],\n  \"not_suitable_interview\": [\"HAL硬件抽象层开发\", \"Binder底层原理\", \"电源管理\", \"蓝牙协议栈\", \"AMS/WMS/PMS框架开发\", \"功耗优化\", \"内存泄漏治理\", \"包体积瘦身\"]\n}\n```",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 3353,
+        "completion_tokens": 5622,
+        "total_tokens": 8975
+      },
+      "oov_tags": []
+    },
+    {
+      "resume_id": "Android系统应用开发深圳李丽霞",
+      "name": "Android系统应用开发深圳李丽霞",
+      "strategy": "zero_shot",
+      "pred": {
+        "primary_level": [
+          "Framework框架层",
+          "App & 应用层"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "锁屏/Keyguard定制",
+          "通知栏定制",
+          "Jetpack应用开发",
+          "BLE低功耗蓝牙",
+          "自动化测试(UiAutomator/JUnit)"
+        ],
+        "secondary_skill": [
+          "MVVM/MVI架构",
+          "Flutter跨端",
+          "分屏/悬浮窗/折叠屏适配",
+          "网络框架(OkHttp/Retrofit)",
+          "ANR/卡顿问题定位"
+        ],
+        "not_suitable_interview": [
+          "AMS/WMS/PMS框架开发",
+          "蓝牙协议栈",
+          "HAL硬件抽象层开发",
+          "Binder底层原理",
+          "SELinux底层安全策略",
+          "高通QCM平台定制"
+        ]
+      },
+      "raw": "{\"primary_level\": [\"Framework框架层\", \"App & 应用层\"], \"core_focus\": [\"SystemUI定制\", \"锁屏/Keyguard定制\", \"通知栏定制\", \"Jetpack应用开发\", \"BLE低功耗蓝牙\", \"自动化测试(UiAutomator/JUnit)\"], \"secondary_skill\": [\"MVVM/MVI架构\", \"Flutter跨端\", \"分屏/悬浮窗/折叠屏适配\", \"网络框架(OkHttp/Retrofit)\", \"ANR/卡顿问题定位\"], \"not_suitable_interview\": [\"AMS/WMS/PMS框架开发\", \"蓝牙协议栈\", \"HAL硬件抽象层开发\", \"Binder底层原理\", \"SELinux底层安全策略\", \"高通QCM平台定制\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 2582,
+        "completion_tokens": 2493,
+        "total_tokens": 5075
+      },
+      "oov_tags": []
+    },
+    {
+      "resume_id": "Android系统应用开发深圳李丽霞",
+      "name": "Android系统应用开发深圳李丽霞",
+      "strategy": "few_shot",
+      "pred": {
+        "primary_level": [
+          "Framework框架层",
+          "系统应用"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "锁屏/Keyguard定制",
+          "通知栏定制",
+          "AMS/WMS/PMS框架开发",
+          "BLE低功耗蓝牙",
+          "分屏/悬浮窗/折叠屏适配"
+        ],
+        "secondary_skill": [
+          "Jetpack Compose",
+          "MVVM/MVI架构",
+          "Flutter跨端",
+          "自动化测试(UiAutomator/JUnit)",
+          "内存泄漏治理"
+        ],
+        "not_suitable_interview": [
+          "Linux内核",
+          "HAL硬件抽象层开发",
+          "蓝牙协议栈",
+          "SELinux底层安全策略",
+          "Binder底层原理",
+          "Launcher3定制",
+          "GMS集成"
+        ]
+      },
+      "raw": "{\"primary_level\": [\"Framework框架层\", \"系统应用\"], \"core_focus\": [\"SystemUI定制\", \"锁屏/Keyguard定制\", \"通知栏定制\", \"AMS/WMS/PMS框架开发\", \"BLE低功耗蓝牙\", \"分屏/悬浮窗/折叠屏适配\"], \"secondary_skill\": [\"Jetpack Compose\", \"MVVM/MVI架构\", \"Flutter跨端\", \"自动化测试(UiAutomator/JUnit)\", \"内存泄漏治理\"], \"not_suitable_interview\": [\"Linux内核\", \"HAL硬件抽象层开发\", \"蓝牙协议栈\", \"SELinux底层安全策略\", \"Binder底层原理\", \"Launcher3定制\", \"GMS集成\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 2682,
+        "completion_tokens": 2770,
+        "total_tokens": 5452
+      },
+      "oov_tags": []
+    },
+    {
+      "resume_id": "Android系统应用开发深圳李丽霞",
+      "name": "Android系统应用开发深圳李丽霞",
+      "strategy": "cot",
+      "pred": {
+        "primary_level": [
+          "Framework框架层",
+          "App & 应用层"
+        ],
+        "core_focus": [
+          "SystemUI定制",
+          "锁屏/Keyguard定制",
+          "通知栏定制",
+          "AMS/WMS/PMS框架开发",
+          "BLE低功耗蓝牙",
+          "ANR/卡顿问题定位"
+        ],
+        "secondary_skill": [
+          "分屏/悬浮窗/折叠屏适配",
+          "Jetpack应用开发",
+          "MVVM/MVI架构",
+          "Flutter跨端",
+          "自动化测试(UiAutomator/JUnit)"
+        ],
+        "not_suitable_interview": [
+          "Launcher3定制",
+          "Settings系统应用定制",
+          "AOD灭屏显示",
+          "Perfetto性能调优",
+          "蓝牙协议栈",
+          "HAL硬件抽象层开发",
+          "冷启动优化"
+        ]
+      },
+      "raw": "{\"reasoning\": \"1. 简历明确写到的项目事实：(1) OPPO SystemUI定制(2019-2021, 约2.5年)：基于Framework原生SystemUI源码深度定制状态栏、通知栏、QS面板、Keyguard锁屏、系统弹窗；基于AMS/WMS改造SystemUI源码；异形屏/分屏/悬浮窗适配；Systrace分析UI渲染、优化主线程耗时、修复内存泄漏、降低ANR与崩溃率、优化开机启动速度。(2) 运动蓝牙App：BluetoothLeScanner扫描、BLE设备连接、BluetoothGatt服务发现、特征值读写/通知、GATT通信模块封装、自动重连管理、硬件协议约定/数据解析/CRC校验。(3) OPPO便签App：MVVM+Retrofit+Flow+Room+协程+Jetpack Compose部分页面+Glide。(4) OPPO OSDK接口测试(2024-2026)：JUnit/UiAutomator/Mockito自动化用例、Instrumentation执行、Python/Bat/Tradefed框架、ASM插桩优化通过率。(5) 合生九里App：Flutter跨平台、MVVM、Dio+ChangeNotifier。(6) 途猫物流：Android端+Python Django后端全栈。2. 深度主导方向：SystemUI定制(2.5年深度定制)、锁屏/Keyguard定制、通知栏定制、AMS/WMS/PMS框架开发(基于AMS/WMS改造SystemUI源码)、BLE低功耗蓝牙(GATT封装/设备扫描/重连/数据解析)、ANR/卡顿问题定位(SystemUI性能优化)。会用过但非主攻：分屏/悬浮窗适配(SystemUI项目中的适配工作)、Jetpack应用开发(便签App)、MVVM架构(多项目使用)、Flutter跨端(合生九里)、自动化测试(OSDK测试项目)。3. 相邻但无深度实践：做了SystemUI但没做Launcher3定制/Settings定制/AOD灭屏显示；做了性能优化但用Systrace而非Perfetto；做了BLE应用层但没碰蓝牙协议栈/HAL层；提到优化开机速度但无冷启动优化深度实践。\", \"primary_level\": [\"Framework框架层\", \"App & 应用层\"], \"core_focus\": [\"SystemUI定制\", \"锁屏/Keyguard定制\", \"通知栏定制\", \"AMS/WMS/PMS框架开发\", \"BLE低功耗蓝牙\", \"ANR/卡顿问题定位\"], \"secondary_skill\": [\"分屏/悬浮窗/折叠屏适配\", \"Jetpack应用开发\", \"MVVM/MVI架构\", \"Flutter跨端\", \"自动化测试(UiAutomator/JUnit)\"], \"not_suitable_interview\": [\"Launcher3定制\", \"Settings系统应用定制\", \"AOD灭屏显示\", \"Perfetto性能调优\", \"蓝牙协议栈\", \"HAL硬件抽象层开发\", \"冷启动优化\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 2659,
+        "completion_tokens": 4596,
+        "total_tokens": 7255
+      },
+      "oov_tags": []
+    },
+    {
+      "resume_id": "Android系统应用开发深圳谢志文",
+      "name": "Android系统应用开发深圳谢志文",
+      "strategy": "zero_shot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "App & 应用层"
+        ],
+        "core_focus": [
+          "Launcher3定制",
+          "WebView/浏览器系统应用",
+          "下载管理模块",
+          "ANR/卡顿问题定位",
+          "冷启动优化",
+          "包体积瘦身"
+        ],
+        "secondary_skill": [
+          "MVVM/MVI架构",
+          "Jetpack Compose",
+          "自定义View/UI",
+          "Dagger/Hilt依赖注入",
+          "JNI/NDK开发"
+        ],
+        "not_suitable_interview": [
+          "SystemUI定制",
+          "AMS/WMS/PMS框架开发",
+          "HAL硬件抽象层开发",
+          "SELinux底层安全策略",
+          "高通QCM平台定制",
+          "XTS/GTS/CTS兼容性测试",
+          "GMS集成",
+          "分屏/悬浮窗/折叠屏适配"
+        ]
+      },
+      "raw": "{\"primary_level\": [\"系统应用\", \"App & 应用层\"], \"core_focus\": [\"Launcher3定制\", \"WebView/浏览器系统应用\", \"下载管理模块\", \"ANR/卡顿问题定位\", \"冷启动优化\", \"包体积瘦身\"], \"secondary_skill\": [\"MVVM/MVI架构\", \"Jetpack Compose\", \"自定义View/UI\", \"Dagger/Hilt依赖注入\", \"JNI/NDK开发\"], \"not_suitable_interview\": [\"SystemUI定制\", \"AMS/WMS/PMS框架开发\", \"HAL硬件抽象层开发\", \"SELinux底层安全策略\", \"高通QCM平台定制\", \"XTS/GTS/CTS兼容性测试\", \"GMS集成\", \"分屏/悬浮窗/折叠屏适配\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 2975,
+        "completion_tokens": 4870,
+        "total_tokens": 7845
+      },
+      "oov_tags": []
+    },
+    {
+      "resume_id": "Android系统应用开发深圳谢志文",
+      "name": "Android系统应用开发深圳谢志文",
+      "strategy": "few_shot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "App & 应用层"
+        ],
+        "core_focus": [
+          "Launcher3定制",
+          "WebView/浏览器系统应用",
+          "下载管理模块",
+          "冷启动优化",
+          "包体积瘦身",
+          "ANR/卡顿问题定位"
+        ],
+        "secondary_skill": [
+          "MVVM/MVI架构",
+          "Jetpack Compose",
+          "网络框架",
+          "自定义View/UI",
+          "功耗优化"
+        ],
+        "not_suitable_interview": [
+          "AMS/WMS/PMS框架开发",
+          "Binder底层原理",
+          "Handler/消息机制",
+          "SystemUI定制",
+          "GMS集成",
+          "CTA认证"
+        ]
+      },
+      "raw": "{\"primary_level\": [\"系统应用\", \"App & 应用层\"], \"core_focus\": [\"Launcher3定制\", \"WebView/浏览器系统应用\", \"下载管理模块\", \"冷启动优化\", \"包体积瘦身\", \"ANR/卡顿问题定位\"], \"secondary_skill\": [\"MVVM/MVI架构\", \"Jetpack Compose\", \"网络框架\", \"自定义View/UI\", \"功耗优化\"], \"not_suitable_interview\": [\"AMS/WMS/PMS框架开发\", \"Binder底层原理\", \"Handler/消息机制\", \"SystemUI定制\", \"GMS集成\", \"CTA认证\"]}",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 3075,
+        "completion_tokens": 4350,
+        "total_tokens": 7425
+      },
+      "oov_tags": [
+        "网络框架"
+      ]
+    },
+    {
+      "resume_id": "Android系统应用开发深圳谢志文",
+      "name": "Android系统应用开发深圳谢志文",
+      "strategy": "cot",
+      "pred": {
+        "primary_level": [
+          "系统应用",
+          "App & 应用层"
+        ],
+        "core_focus": [
+          "Launcher3定制",
+          "WebView/浏览器系统应用",
+          "下载管理模块",
+          "ANR/卡顿问题定位",
+          "冷启动优化",
+          "包体积瘦身"
+        ],
+        "secondary_skill": [
+          "MVVM/MVI架构",
+          "Jetpack应用开发",
+          "Jetpack Compose",
+          "自定义View/UI",
+          "网络框架"
+        ],
+        "not_suitable_interview": [
+          "AMS/WMS/PMS框架开发",
+          "Binder底层原理",
+          "Handler/消息机制",
+          "四大组件框架",
+          "SystemUI定制",
+          "SELinux底层安全策略",
+          "HAL硬件抽象层开发"
+        ]
+      },
+      "raw": "```json\n{\n  \"reasoning\": \"1. 简历明确写到的项目事实：①OppoLauncher——基于AOSP Launcher3深度定制的系统桌面，负责稳定性保障（Crash/ANR/黑屏闪屏/无响应），面向手机/折叠屏/平板；②OPPO浏览器——亿级用户系统级应用，6年，主导搜索/网页渲染/下载管理三大模块全生命周期，含WebView内核扩展、多进程架构、断点续传、JS Bridge等；③冷启动优化2.8s→1.2s；④APK包体积130M→90M；⑤下载内核全链路重构；⑥多Tab架构+WebView复用池；⑦自研悬浮窗抓包工具；⑧ANR/内存泄漏/卡顿/功耗系统级治理（Systrace/Profiler/Perfetto/LeakCanary）；⑨酒店App独立开发（MVVM+Retrofit+Room+高德/支付SDK）；⑩售卖机App含JNI/C++跨层通信。2. 深度主导/完整落地：Launcher3定制（当前主攻）、WebView/浏览器系统应用（6年亿级用户）、下载管理模块（全链路重构）、ANR/卡顿问题定位（系统级治理有量化成果）、冷启动优化（量化2.8s→1.2s）、包体积瘦身（量化30%降幅）。会用过但非主攻：MVVM/MVI架构、Jetpack生态、Compose、自定义View、网络框架(OkHttp/Retrofit)、JNI/NDK开发。3. 相邻但无深度实践：简历对Binder/Handler/AMS/WMS仅写'了解'，未做Framework层开发；四大组件仅停留在使用层面；SystemUI定制与Launcher相邻但未涉及；SELinux/HAL等底层方向完全未实践。\",\n  \"primary_level\": [\"系统应用\", \"App & 应用层\"],\n  \"core_focus\": [\"Launcher3定制\", \"WebView/浏览器系统应用\", \"下载管理模块\", \"ANR/卡顿问题定位\", \"冷启动优化\", \"包体积瘦身\"],\n  \"secondary_skill\": [\"MVVM/MVI架构\", \"Jetpack应用开发\", \"Jetpack Compose\", \"自定义View/UI\", \"网络框架\"],\n  \"not_suitable_interview\": [\"AMS/WMS/PMS框架开发\", \"Binder底层原理\", \"Handler/消息机制\", \"四大组件框架\", \"SystemUI定制\", \"SELinux底层安全策略\", \"HAL硬件抽象层开发\"]\n}\n```",
+      "parse_ok": true,
+      "parse_error": null,
+      "usage": {
+        "prompt_tokens": 3052,
+        "completion_tokens": 3620,
+        "total_tokens": 6672
+      },
+      "oov_tags": [
+        "网络框架"
+      ]
+    }
+  ]
+}
