@@ -1,0 +1,26 @@
+# 运行结果存档（W3 反思式工具调用，真实网关调用）
+# 生成时间：2026-11-20；入口：uv run w3-agent
+# 配置：base_url = https://ark.cn-beijing.volces.com/api/plan/v1；model = glm-5.3；DRY_RUN=0
+# 密钥不写入本存档。
+
+########## uv run w3-agent ##########
+[提问] 请为候选人 demo-001 准备面试官推荐：先读取 HR 手动指定的优先面试官，再查询他们的可面试时段，最后生成一张待 HR 确认的推荐卡片草稿；不要自动派单。
+------------------------------------------------------------
+[第 1 步] 模型选择工具：notify_hr_override({"candidate_ref": "demo-001"})
+          执行结果：{"override_applied": true, "preferred_interviewer_ids": ["XA-1042"], "priority": "manual_highest", "rule_sort_locked": false, "source": "hr_message", "note": "HR 手动指定张工优先", "message": "人工指定优先于规则排序；工具只读取结论并置顶，不自动改派面试官。"}
+          反思意见：存在 HR 手动指定：这些面试官必须排在规则结果之前。
+[第 2 步] 模型选择工具：query_interviewer_calendar({"interviewer_id": "XA-1042"})
+          执行结果：{"interviewer_id": "XA-1042", "read_only": true, "locked": false, "available_slots": ["2026-11-21 10:00", "2026-11-21 14:00", "2026-11-23 09:30"], "message": "仅返回可面试时段建议，不锁定、不预订会议；最终排期由 HR 确认。"}
+[第 3 步] 模型选择工具：push_recommendation_card({"candidate_ref": "demo-001", "note": "候选人 demo-001 面试官推荐草稿：HR 手动指定张工（XA-1042）优先，人工结论优先级最高。张工可面试时段：2026-11-21 10:00、2026-11-21 14:00、2026-11-23 09:30（仅时段建议，未锁定、未预订会议）。请 HR 确认面试官及排期后再行派单。", "recommend": [{"interviewer_id": "XA-1042", "match_reason": "HR 手动指定优先面试官（来源：hr_message，人工结论优先级最高，覆盖规则排序）；可面试时段：2026-11-21 10:00、2026-11-21 14:00、2026-11-23 09:30", "name": "张工"}]})
+          执行结果：{"auto_dispatch": false, "requires_human_confirm": true, "pushed": false, "card": {"title": "面试官推荐清单（待 HR 确认）", "candidate_ref": "demo-001", "channel": "private", "target": null, "lines": ["1. XA-1042 张工：HR 手动指定优先面试官（来源：hr_message，人工结论优先级最高，覆盖规则排序）；可面试时段：2026-11-21 10:00、2026-11-21 14:00、2026-11-23 09:30"], "note": "..."}}
+          反思意见：卡片是待确认草稿：不自动派单、不创建会议，必须提示由 HR 确认。
+[第 4 步] 模型直接作答，循环结束
+
+[回答]
+已完成候选人 demo-001 的面试官推荐准备：
+1. HR 手动指定：张工（XA-1042），人工结论优先级最高，覆盖规则排序；
+2. 只读时段：2026-11-21 10:00、2026-11-21 14:00、2026-11-23 09:30，未锁定；
+3. 推荐卡片草稿已生成，未推送、未通知面试官、未创建会议，待 HR 确认后再派单。
+
+# 链路结论：notify_hr_override → query_interviewer_calendar → push_recommendation_card → 收敛。
+# 边界均生效：read_only / persisted=false / locked=false / pushed=false / auto_dispatch=false / requires_human_confirm=true。
