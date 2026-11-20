@@ -1,8 +1,8 @@
 """LLM 客户端封装：OpenAI 兼容网关。
 环境变量（可写在 .env，也可直接 export / $env:）：
-    LLM_BASE_URL  默认 http://221.131.102.69:18088/v1（GLM 网关，OpenAI 兼容）
+    LLM_BASE_URL  默认 https://ark.cn-beijing.volces.com/api/plan/v1（OpenAI 兼容）
     LLM_API_KEY   自己的 key
-    LLM_MODEL     默认 glm-5.2
+    LLM_MODEL     默认 glm-5.3
     DRY_RUN       1/true 时不请求网关，返回本地模拟响应（仅用于验证代码链路）
 """
 
@@ -12,8 +12,8 @@ import json
 import os
 from typing import Any
 
-DEFAULT_BASE_URL = "http://221.131.102.69:18088/v1"
-DEFAULT_MODEL = "glm-5.2"
+DEFAULT_BASE_URL = "https://ark.cn-beijing.volces.com/api/plan/v1"
+DEFAULT_MODEL = "glm-5.3"
 
 
 def _load_dotenv() -> None:
@@ -58,7 +58,7 @@ class LLMClient:
         self.dry_run = is_dry_run() or not self.api_key
         self._client = None
         if not self.dry_run:
-            from openai import OpenAI  # 延迟导入：DRY_RUN 时无需安装 openai
+            from openai import APIConnectionError, APIStatusError, OpenAI  # 延迟导入：DRY_RUN 时无需安装 openai
 
             self._client = OpenAI(base_url=self.base_url, api_key=self.api_key)
 
@@ -73,12 +73,19 @@ class LLMClient:
         if self.dry_run:
             return self._fake_chat(messages, tools)
 
-        resp = self._client.chat.completions.create(
-            model=self.model,
-            messages=messages,
-            tools=tools or None,
-            temperature=temperature,
-        )
+        try:
+            resp = self._client.chat.completions.create(
+                model=self.model,
+                messages=messages,
+                tools=tools or None,
+                temperature=temperature,
+            )
+        except APIStatusError as exc:
+            body = exc.response.text if exc.response is not None else ""
+            raise RuntimeError(f"LLM 网关返回错误 {exc.status_code}：{body[:500]}") from exc
+        except APIConnectionError as exc:
+            cause = exc.__cause__ or exc
+            raise RuntimeError(f"无法连接 LLM 网关 {self.base_url}：{cause}") from exc
         choice = resp.choices[0].message
         tool_calls = [
             {"id": tc.id, "name": tc.function.name, "arguments": tc.function.arguments}

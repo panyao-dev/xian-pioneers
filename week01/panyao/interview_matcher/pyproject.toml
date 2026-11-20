@@ -13,6 +13,7 @@ dependencies = [
 w1-hello = "interview_matcher.week1.hello:main"
 w1-tool-call = "interview_matcher.week1.tool_call:main"
 w2-real = "interview_matcher.week2.real_resume_demo:main"
+w3-agent = "interview_matcher.week3.reflection_agent:main"
 
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple/"
