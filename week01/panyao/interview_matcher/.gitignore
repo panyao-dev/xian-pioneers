@@ -5,4 +5,5 @@ __pycache__/
 interviewer_profile.json
 real_results.json
 results.json
+trace.json
 .idea/

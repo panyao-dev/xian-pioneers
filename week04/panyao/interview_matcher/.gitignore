@@ -1,0 +1,9 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+interviewer_profile.json
+real_results.json
+results.json
+trace.json
+.idea/

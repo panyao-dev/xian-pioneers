@@ -9,6 +9,7 @@
 | `uv run w1-tool-call` | `interview_matcher.week1.tool_call` | 工具调用闭环，可带自定义问题 |
 | `uv run w2-real <pdf...>` | `interview_matcher.week2.real_resume_demo` | 真实简历 PDF 脱敏后，按 zero/few-shot/CoT 三策略抽取标签 |
 | `uv run w3-agent [问题]` | `interview_matcher.week3.reflection_agent` | 反思式工具调用：只读拉简历、查时段、读 HR 覆盖、生成推荐卡片草稿，不自动派单 |
+| `uv run w4-loop [问题] [--max-steps N]` | `interview_matcher.week4.agent_loop` | 手写 Agent Loop：输入/工具参数/输出四道校验闸门 + 轮数上限，校验失败带原因回灌 |
 
 带参数示例：`uv run w1-tool-call "社招一般安排几轮面试？"`
 

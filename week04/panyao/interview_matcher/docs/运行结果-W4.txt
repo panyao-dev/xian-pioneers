@@ -1,0 +1,46 @@
+# 运行结果存档（W4 手写 Agent Loop）
+# 生成时间：2026-11-26；入口：uv run w4-loop
+# 配置：base_url = https://ark.cn-beijing.volces.com/api/plan/v1；model = glm-5.3；DRY_RUN=0
+# 密钥不写入本存档。
+
+########## 场景 1：完整链路正常收敛（uv run w4-loop） ##########
+[输入校验] 通过（81 字符）
+[提问] 请为候选人 demo-001 准备面试官推荐：先读取 HR 手动指定的优先面试官，再查询他们的可面试时段，最后生成一张待 HR 确认的推荐卡片草稿；不要自动派单。
+------------------------------------------------------------
+[第 1 步] 执行工具 notify_hr_override({"candidate_ref": "demo-001"})
+          返回：{"override_applied": true, "preferred_interviewer_ids": ["XA-1042"], "priority": "manual_highest", "rule_sort_locked": false, "source": "hr_message", "note": "HR 手动指定张工优先", "message": "人工指定优先于规则排序；工具只读取结论并置顶，不自动改派面试官。"}
+[第 2 步] 执行工具 query_interviewer_calendar({"interviewer_id": "XA-1042"})
+          返回：{"interviewer_id": "XA-1042", "read_only": true, "locked": false, "available_slots": ["2026-11-21 10:00", "2026-11-21 14:00", "2026-11-23 09:30"], "message": "仅返回可面试时段建议，不锁定、不预订会议；最终排期由 HR 确认。"}
+[第 3 步] 执行工具 push_recommendation_card({"candidate_ref": "demo-001", "note": "HR 手动指定张工优先（来源：hr_message），人工结论优先级最高。可面试时段建议：2026-11-21 10:00 / 2026-11-21 14:00 / 2026-11-23 09:30。本卡片仅为草稿，待 HR 确认后再派单与排期。", "recommend": [{"interviewer_id": "XA-1042", "match_reason": "HR 手动指定优先面试官（人工结论优先级最高，来源 hr_message）", "name": "张工"}]})
+          返回：{"auto_dispatch": false, "requires_human_confirm": true, "pushed": false, "card": {"title": "面试官推荐清单（待 HR 确认）", "candidate_ref": "demo-001", "channel": "private", "target": null, "lines": ["1. XA-1042 张工：HR 手动指定优先面试官（人工结论优先级最高，来源 hr_message）"], "note": "..."}}
+[第 4 步] 模型作答，输出校验通过，循环结束
+[回答]
+已完成候选人 demo-001 的面试官推荐准备，流程与结论如下：
+1. HR 手动指定优先面试官：XA-1042 张工（来源 hr_message，人工结论优先级最高）；
+2. 可面试时段建议（只读，未锁定）：2026-11-21 10:00、2026-11-21 14:00、2026-11-23 09:30；
+3. 推荐卡片草稿已生成：pushed=false、auto_dispatch=false、requires_human_confirm=true。
+待 HR 确认面试官与排期后才生效；未通知面试官、未创建会议、未自动派单。
+
+[trace] 已写入 src/interview_matcher/week4/trace.json
+[结果] ok=True  terminated_by=answered
+
+########## 场景 2：最大轮数兜底（uv run w4-loop --max-steps 2） ##########
+[输入校验] 通过（81 字符）
+[第 1 步] 执行工具 notify_hr_override({"candidate_ref": "demo-001"})
+[第 2 步] 执行工具 query_interviewer_calendar({"interviewer_id": "XA-1042"})
+[终止] 达到最大轮数 2，结构化终止（未产出最终回答）
+[结果] ok=False  terminated_by=max_steps
+
+########## 场景 3：参数校验闸门（本地单元级验证，不消耗模型调用） ##########
+枚举越界      → ["push_recommendation_card.arguments.channel 取值 'mail' 不在允许范围 ['group', 'private'] 内"]
+未定义字段    → ["query_interviewer_calendar.arguments 出现未定义字段：channel（只允许 schema 内字段）"]
+数组元素缺必填 → ["push_recommendation_card.arguments.recommend[0] 缺少必填字段：interviewer_id"]
+类型不符      → ["...candidate_ref 类型错误：期望 string，实际 int", "...recommend 类型错误：期望 array，实际 str"]
+合法参数      → []（放行）
+
+########## 场景 4：输出校验闸门（本地单元级验证） ##########
+空回答        → 最终回答为空
+手机号        → 回答中疑似手机号未脱敏，必须去掉个人联系方式
+编造工号      → 回答提到面试官池中不存在的工号：XA-9999，疑似编造
+越界表述      → 回答出现「已自动派单」：不得声称自动派单
+正常回答      → ok=True，无错误

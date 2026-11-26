@@ -1,0 +1,26 @@
+[project]
+name = "interview-matcher"
+version = "0.1.0"
+description = "Android 岗位面试官匹配 Agent（Agent Lab 学习营作业工程）"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=3.46.0",
+    "pypdf>=7.0.1",
+]
+
+[project.scripts]
+w1-hello = "interview_matcher.week1.hello:main"
+w1-tool-call = "interview_matcher.week1.tool_call:main"
+w2-real = "interview_matcher.week2.real_resume_demo:main"
+w3-agent = "interview_matcher.week3.reflection_agent:main"
+w4-loop = "interview_matcher.week4.agent_loop:main"
+w4-probe = "interview_matcher.week4.probe_cases:main"
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
